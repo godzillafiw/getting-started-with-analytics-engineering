@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: user_count
+    description: "Number of user in Greenery"
+    columns:
+      - name: record_count
+        description: "Number of users"
+        tests:
+          - not_null

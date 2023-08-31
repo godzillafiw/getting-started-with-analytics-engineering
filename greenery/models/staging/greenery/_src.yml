@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: greenery
+    schema: public
+    database: greenery
+
+    tables:
+      - name: users
+        description: Greenery users
+      - name: events
+        description: Events
+      - name: addresses
+        description: Addresses
+      - name: order_items
+        description: Order Items
+      - name: orders
+        description: Orders
+        freshness:
+          warn_after:
+            count: 3
+            period: hour
+          error_after:
+            count: 1000
+            period: day
+        loaded_at_field: created_at
+      - name: promotions
+        description: Promotions
+      - name: products
+        description: products
+
